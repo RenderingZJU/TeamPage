@@ -3,11 +3,11 @@
     <el-header>
       <div class="header-content">
         <a href="/" class="logo">
-          <div class="logo-title-full hidden-xs-only">
-            A<span class="sub">dvanced</span> R<span class="sub">endering &</span> C<span class="sub">omputation</span>
+          <div class="logo-title logo-title-full hidden-xs-only">
+            A<span class="sub">dvanced</span> R<span class="sub">endering &</span> C<span class="sub">reativity</span>
             Group
           </div>
-          <div class="logo-title-short hidden-sm-and-up">
+          <div class="logo-title logo-title-short hidden-sm-and-up">
             ARC Group
           </div>
         </a>
@@ -73,15 +73,17 @@ const activeIndex = computed(() => route.path)
   align-items: center;
 }
 
-.logo-title-short {
+.logo-title {
+  color: #1a478d;
   font-weight: 600;
+}
+
+.logo-title-short {
   font-size: 1.5rem;
   color: var(--el-text-color-primary);
 }
 
 .logo-title-full {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 600;
   font-size: 1.5rem;
   color: var(--el-text-color-primary);
 }

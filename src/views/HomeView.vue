@@ -1,9 +1,12 @@
 <template>
   <div class="home-container">
+    <!-- <section class="group-teaser">
+      <el-image src="/topic-teasers/chanel-box.png" fit="cover" class="group-image" />
+    </section> -->
     <!-- Section 1: Introduction -->
     <section class="intro-section">
       <p>
-        The <strong>Advanced Rendering and Computation(ARC) Group</strong> is a research group in the State Key Lab of
+        The <strong>Advanced Rendering and Computation (ARC) Group</strong> is a research group in the State Key Lab of
         CAD&CG at Zhejiang University that focuses on developing cutting-edge algorithms for rendering and computation.
       </p>
       <p>
@@ -20,14 +23,8 @@
         <el-col v-for="topic in topics" :key="topic.title" :xs="24" :sm="12" :md="8">
           <el-card shadow="hover" class="topic-card">
             <div class="topic-image-container">
-              <el-image
-                v-for="(img, index) in topic.images"
-                :key="index"
-                :src="img"
-                fit="cover"
-                class="topic-image"
-                lazy
-              />
+              <el-image v-for="(img, index) in topic.images" :key="index" :src="img" fit="cover" class="topic-image"
+                lazy />
             </div>
             <div class="topic-content">
               <h3 class="topic-title">{{ topic.title }}</h3>
@@ -36,20 +33,6 @@
           </el-card>
         </el-col>
       </el-row>
-    </section>
-
-    <!-- Section 3: News -->
-    <section class="news-section">
-      <h2 class="section-title">News</h2>
-      <div class="news-list">
-        <div v-for="item in newsItems" :key="item.date" class="news-item">
-          <!-- <el-image :src="item.imageUrl" class="news-image" fit="cover" lazy /> -->
-          <div class="news-content">
-            <p class="news-date">{{ item.date }}</p>
-            <p class="news-description" v-html="item.description"></p>
-          </div>
-        </div>
-      </div>
     </section>
 
   </div>
@@ -62,17 +45,17 @@ const topics = ref([
   {
     title: 'Global & Neural Rendering',
     description: 'We develop algorithms that simulate light transport in complex scenes, including global illumination and neural rendering techniques that leverage deep learning for enhanced realism.',
-    images: ['/images/home/topic-diff-render-1.jpg', '/images/home/topic-diff-render-2.jpg']
+    images: ['/topic-teasers/dualband.png']
   },
   {
     title: 'High-performance Rendering',
     description: 'We create high-performance rendering algorithms that optimize the rendering process for real-time applications, including ray tracing and rasterization techniques.',
-    images: ['/images/home/topic-realism-1.jpg', '/images/home/topic-realism-2.jpg']
+    images: ['/topic-teasers/streaming.jpg']
   },
   {
     title: 'Generative & Inverse Rendering',
     description: 'We focus on generative models for rendering and inverse rendering techniques that reconstruct 3D scenes from images, enabling applications in computer vision and graphics.',
-    images: ['/images/home/topic-compiler.jpg']
+    images: ['/topic-teasers/icn.png']
   }
 ]);
 
@@ -95,6 +78,13 @@ strong {
   font-weight: 600;
 }
 
+.group-image {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
 .home-container {
   max-width: 1024px;
   margin: 0 auto;
@@ -103,6 +93,7 @@ strong {
 
 /* --- Section Title General Style --- */
 .section-title {
+  font-family: "Oswald", sans-serif;
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 30px;
@@ -113,7 +104,7 @@ strong {
 
 /* --- Intro Section --- */
 .intro-section {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   font-size: 1.1rem;
   line-height: 1.8;
   color: var(--el-text-color-primary);
@@ -125,18 +116,20 @@ strong {
 
 /* --- Topics Section --- */
 .topics-section {
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 
 .topic-card {
   margin-bottom: 30px;
   border: none;
-  --el-card-padding: 0; /* Remove default card padding */
+  --el-card-padding: 0;
+  /* Remove default card padding */
 }
 
 .topic-image-container {
   display: flex;
-  gap: 4px; /* A small gap between images if there are two */
+  gap: 4px;
+  /* A small gap between images if there are two */
 }
 
 .topic-image {
@@ -176,7 +169,8 @@ strong {
   width: 100px;
   height: 100px;
   border-radius: 8px;
-  flex-shrink: 0; /* Prevent image from shrinking */
+  flex-shrink: 0;
+  /* Prevent image from shrinking */
   border: 1px solid var(--el-border-color-lighter);
 }
 
@@ -209,7 +203,8 @@ strong {
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
   .news-item {
-    flex-direction: column; /* Stack image on top of text on mobile */
+    flex-direction: column;
+    /* Stack image on top of text on mobile */
     align-items: flex-start;
   }
 }

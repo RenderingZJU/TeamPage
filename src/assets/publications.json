@@ -59,7 +59,7 @@
       "Yuchi Huo"
     ],
     "venue": "ICCV 2025",
-    "teaserUrl": "https://github.com/IntrinsicControlNet/intrinsiccontrolnet.github.io/blob/master/teaser_iccv.png?raw=true",
+    "teaserUrl": "/pub-teasers/icn.png",
     "links": {
       "project": "https://intrinsiccontrolnet.github.io/"
     }
@@ -79,7 +79,7 @@
       "Yuchi Huo"
     ],
     "venue": "ICCV 2025",
-    "teaserUrl": "http://www.cad.zju.edu.cn/home/huo/images/pubs/25a3gs.png",
+    "teaserUrl": "/pub-teasers/gs3.png",
     "links": {
       "project": "https://artgaussian.github.io/"
     }
@@ -117,7 +117,7 @@
       "Yuchi Huo"
     ],
     "venue": "ACM SIGGRAPH 2025",
-    "teaserUrl": "https://dl.acm.org/cms/10.1145/3721238.3730733/asset/b604d97c-2ff4-4d67-8d63-1c19f38b60fe/assets/images/medium/siggraphconferencepapers25-144-fig1.jpg",
+    "teaserUrl": "/pub-teasers/dualband.jpg",
     "links": {
       "paper": "https://dl.acm.org/doi/10.1145/3721238.3730733",
       "project": "https://mshnb.github.io/dualbandfusion/",
