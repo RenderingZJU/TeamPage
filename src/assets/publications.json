@@ -1,0 +1,105 @@
+[
+  {
+    "id": 1,
+    "year": 2023,
+    "title": "Adaptive Recurrent Frame Prediction with Learnable Motion Vectors",
+    "authors": [
+      "Zhizhen Wu",
+      "Chenyu Zuo",
+      "Yuchi Huo",
+      "Yazhen Yuan",
+      "Yifan Peng",
+      "Guiyang Pu",
+      "Rui Wang",
+      "Hujun Bao"
+    ],
+    "venue": "ACM SIGGRAPH Asia 2023",
+    "teaserUrl": "https://vicranger.github.io/project-page-learnable-motion-vector/teasor.jpg",
+    "links": {
+      "paper": "https://vicranger.github.io/project-page-learnable-motion-vector/wu23adaptive.pdf",
+      "project": "https://vicranger.github.io/project-page-learnable-motion-vector/",
+      "code": "https://github.com/VicRanger/learnable-motion-vector"
+    }
+  },
+  {
+    "id": 2,
+    "year": 2025,
+    "title": "MoFlow: Motion-Guided Flows for Recurrent Rendered Frame Prediction",
+    "authors": [
+      "Zhizhen Wu",
+      "Zhilong Yuan",
+      "Chenyu Zuo",
+      "Yazhen Yuan",
+      "Yifan Peng",
+      "Guiyang Pu",
+      "Rui Wang",
+      "Yuchi Huo"
+    ],
+    "venue": "Transactions on Graphics 2025",
+    "teaserUrl": "https://vicranger.github.io/project-page-motion-guided-flow/teasor.jpg",
+    "links": {
+      "paper": "https://vicranger.github.io/project-page-motion-guided-flow/paper.pdf",
+      "project": "https://vicranger.github.io/project-page-motion-guided-flow/",
+      "code": "https://github.com/VicRanger/motion-guided-flow"
+    }
+  },
+  {
+    "id": 3,
+    "year": 2025,
+    "title": "IntrinsicControlNet: Cross-distribution Image Generation with Real and Unreal",
+    "authors": [
+      "Jiayuan Lu",
+      "Rengan Xie",
+      "Zixuan Xie",
+      "Zhizhen Wu",
+      "Dianbing Xi",
+      "Qi Ye",
+      "Rui Wang",
+      "Hujun Bao",
+      "Yuchi Huo"
+    ],
+    "venue": "ICCV 2025",
+    "teaserUrl": "https://github.com/IntrinsicControlNet/intrinsiccontrolnet.github.io/blob/master/teaser_iccv.png?raw=true",
+    "links": {
+      "project": "https://intrinsiccontrolnet.github.io/"
+    }
+  },
+  {
+    "id": 4,
+    "year": 2025,
+    "title": "A³GS: Arbitrary Artistic Style into Arbitrary 3D Gaussian Splatting",
+    "authors": [
+      "Zhiyuan Fang",
+      "Rengan Xie",
+      "Xuancheng Jin",
+      "Qi Ye",
+      "Wei Chen",
+      "Wenting Zheng",
+      "Rui Wang",
+      "Yuchi Huo"
+    ],
+    "venue": "ICCV 2025",
+    "teaserUrl": "http://www.cad.zju.edu.cn/home/huo/images/pubs/25a3gs.png",
+    "links": {
+      "project": "https://artgaussian.github.io/"
+    }
+  },
+  {
+    "id": 5,
+    "year": 2025,
+    "title": "A Fully-statistical Wave Scattering Model for Heterogeneous Surfaces",
+    "authors": [
+      "Zhengze Liu",
+      "Yuchi Huo",
+      "Yifan Peng",
+      "Rui Wang"
+    ],
+    "venue": "ACM Transactions on Graphics (Proceedings of SIGGRAPH 2025)",
+    "teaserUrl": "https://dream4leo.github.io/assets/images/heterosurface.png",
+    "links": {
+      "paper": "https://doi.org/10.1145/3730828",
+      "project": "https://dream4leo.github.io/heterosurface",
+      "code": "https://github.com/Dream4Leo/HeteroSurface"
+    }
+  }
+]

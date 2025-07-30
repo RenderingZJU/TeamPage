@@ -157,7 +157,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 .right-panel p {
   font-size: 1rem;
   margin-bottom: 20px;
-  color: var(--el-text-color-regular);
+  color: var(--el-text-color-primary);
 }
 
 /* Responsive adjustments for smaller screens */

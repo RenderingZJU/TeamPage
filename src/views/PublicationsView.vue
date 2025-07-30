@@ -2,17 +2,8 @@
   <div class="publications-container">
     <h1 class="page-title">Publications</h1>
 
-    <div v-if="loading" class="loading-state">
-      <el-skeleton :rows="5" animated />
-    </div>
-
-    <div v-if="error" class="error-state">
-      <el-alert title="Failed to load publications." type="error" show-icon :closable="false">
-        Please try refreshing the page.
-      </el-alert>
-    </div>
-
-    <div v-if="!loading && !error" class="publications-list">
+    <!-- No need for loading/error states anymore, the data is available instantly! -->
+    <div class="publications-list">
       <section v-for="[year, papers] in groupedPublications" :key="year" class="year-section">
         <el-divider>
           <h2 class="year-header">{{ year }}</h2>
@@ -35,8 +26,14 @@
                   Accepted by <em>{{ paper.venue }}</em>
                 </p>
                 <div class="links">
-                  <el-button v-if="paper.links.project" type="primary" link @click="openLink(paper.links.project)">
+                  <el-button v-if="paper.links.paper" type="primary" link :icon="Link" @click="openLink(paper.links.paper)">
+                    Paper
+                  </el-button>
+                  <el-button v-if="paper.links.project" type="primary" link :icon="Folder" @click="openLink(paper.links.project)">
                     Project
+                  </el-button>
+                  <el-button v-if="paper.links.code" type="primary" link :icon="CollectionTag" @click="openLink(paper.links.code)">
+                    Code
                   </el-button>
                 </div>
               </div>
@@ -49,51 +46,26 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue'
-import axios from 'axios'
+import { computed } from 'vue'
+// --- 1. Import the JSON data directly as a module ---
+// Vite will handle this import at build time.
+// I'm using an alias `@` which typically points to `/src`
+import publicationsData from "@/assets/publications.json"
 import { Link, Folder, CollectionTag } from '@element-plus/icons-vue'
 
-// --- 1. TYPE DEFINITION ---
-interface Publication {
-  id: number;
-  year: number;
-  title: string;
-  authors: string[];
-  venue: string;
-  teaserUrl: string;
-  links: {
-    paper?: string;
-    project?: string;
-    code?: string;
-  };
-}
+// --- 2. (Optional but Recommended) Infer the type automatically ---
+// This is a powerful TypeScript trick. It creates a `Publication` type
+// based on the actual structure of an element in your JSON array.
+type Publication = (typeof publicationsData)[number];
 
-// --- 2. STATE MANAGEMENT ---
-const publications = ref<Publication[]>([]);
-const loading = ref(true);
-const error = ref(false);
+// --- 3. The data is now a simple, static constant ---
+// We sort it once to ensure it's in the correct order.
+const publications: Publication[] = [...publicationsData].sort((a, b) => b.year - a.year || b.id - a.id);
 
-// --- 3. DATA FETCHING ---
-onMounted(async () => {
-  try {
-    // Axios fetches from the /public folder directly
-    const response = await axios.get<Publication[]>('/data/publications.json');
-    // Sort by year descending before storing
-    publications.value = response.data.sort((a, b) => b.year - a.year);
-  } catch (err) {
-    console.error("Failed to fetch publications:", err);
-    error.value = true;
-  } finally {
-    loading.value = false;
-  }
-});
-
-// --- 4. DATA GROUPING (Computed Property) ---
+// --- 4. The computed property works exactly as before ---
 const groupedPublications = computed(() => {
-  if (!publications.value.length) return new Map();
-
   const groups = new Map<number, Publication[]>();
-  for (const paper of publications.value) {
+  for (const paper of publications) {
     if (!groups.has(paper.year)) {
       groups.set(paper.year, []);
     }
@@ -103,20 +75,19 @@ const groupedPublications = computed(() => {
 });
 
 
-// --- 5. HELPER FUNCTIONS ---
-// This function bolds the group leader's name
+// --- Helper functions remain the same ---
 const formatAuthors = (authors: string[]): string => {
-  return authors.map(author =>
-    author === 'Wei Chen' ? `<strong>${author}</strong>` : author
-  ).join(', ');
+  return authors.join(', ');
 };
 
 const openLink = (url: string) => {
-  window.open(url, '_blank');
+  // Use a non-null assertion because v-if already checks for existence
+  window.open(url!, '_blank');
 }
 </script>
 
 <style scoped>
+/* Your existing styles are perfect and don't need changes */
 .publications-container {
   max-width: 1024px;
   margin: 0 auto;
@@ -180,7 +151,6 @@ const openLink = (url: string) => {
   line-height: 1.5;
 }
 
-/* This targets the bolded name from v-html */
 .authors :deep(strong) {
   font-weight: 600;
   color: var(--el-text-color-primary);
@@ -188,7 +158,7 @@ const openLink = (url: string) => {
 
 .venue {
   font-size: 0.95rem;
-  color: var(--el-text-color-secondary);
+  color: var(--el-text-color-regular);
   margin: 0 0 16px 0;
 }
 
@@ -201,7 +171,6 @@ const openLink = (url: string) => {
   font-size: 0.9rem;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .teaser-image {
     margin-bottom: 20px;
