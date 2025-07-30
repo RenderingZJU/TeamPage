@@ -34,6 +34,18 @@
         </el-col>
       </el-row>
     </section>
+    <!-- Sections 3: News -->
+    <section class="news-section">
+      <h2 class="section-title">News</h2>
+      <div class="news-list">
+        <div v-for="(item, index) in newsItems" :key="index" class="news-item">
+          <div>
+            <p class="news-date">{{ item.date }}</p>
+            <p class="news-description" v-html="item.description"></p>
+          </div>
+        </div>
+      </div>
+    </section>
 
   </div>
 </template>
@@ -61,14 +73,16 @@ const topics = ref([
 
 const newsItems = ref([
   {
-    date: '28 July 2024',
-    description: 'Two new papers accepted at <strong>CVPR 2024</strong>!',
-    // imageUrl: '/images/home/news-1.jpg'
+    date: '25 June 2025',
+    description: 'Two new papers accepted at <strong>ICCV 2025</strong>!'
   },
   {
-    date: '25 November 2023',
-    description: 'Three new papers accepted at <strong>SIGGRAPH Asia 2023</strong>!',
-    // imageUrl: '/images/home/news-2.jpg'
+    date: '23 May 2025',
+    description: 'Three new papers accepted at <strong>SIGGRAPH 2025</strong>!'
+  },
+  {
+    date: '12 March 2025',
+    description: 'One paper accepted at <strong>Transactions on Graphics</strong>!'
   }
 ]);
 </script>
