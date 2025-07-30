@@ -101,5 +101,27 @@
       "project": "https://dream4leo.github.io/heterosurface",
       "code": "https://github.com/Dream4Leo/HeteroSurface"
     }
+  },
+  {
+    "id": 6,
+    "year": 2025,
+    "title": "Dual-Band Feature Fusion for Neural Global Illumination with Multi-Frequency Reflections",
+    "authors": [
+      "Shaohua Mo",
+      "Chuankun Zheng",
+      "Zihao Lin",
+      "Dianbing Xi",
+      "Qi Ye",
+      "Rui Wang",
+      "Hujun Bao",
+      "Yuchi Huo"
+    ],
+    "venue": "ACM SIGGRAPH 2025",
+    "teaserUrl": "https://dl.acm.org/cms/10.1145/3721238.3730733/asset/b604d97c-2ff4-4d67-8d63-1c19f38b60fe/assets/images/medium/siggraphconferencepapers25-144-fig1.jpg",
+    "links": {
+      "paper": "https://dl.acm.org/doi/10.1145/3721238.3730733",
+      "project": "https://mshnb.github.io/dualbandfusion/",
+      "code": ""
+    }
   }
 ]

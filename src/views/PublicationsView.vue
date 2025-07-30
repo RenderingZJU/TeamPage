@@ -75,9 +75,7 @@ const groupedPublications = computed(() => {
 
 const formatAuthors = (authors: string[]): string => {
   // Example of highlighting a specific author
-  return authors.map(author =>
-    author === 'Wei Chen' ? `<strong>${author}</strong>` : author
-  ).join(', ');
+  return authors.join(', ');
 };
 </script>
 
