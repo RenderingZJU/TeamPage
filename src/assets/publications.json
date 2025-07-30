@@ -14,7 +14,7 @@
       "Hujun Bao"
     ],
     "venue": "ACM SIGGRAPH Asia 2023",
-    "teaserUrl": "https://vicranger.github.io/project-page-learnable-motion-vector/teasor.jpg",
+    "teaserUrl": "/pub-teasers/23arfp.webp",
     "links": {
       "paper": "https://vicranger.github.io/project-page-learnable-motion-vector/wu23adaptive.pdf",
       "project": "https://vicranger.github.io/project-page-learnable-motion-vector/",
@@ -36,7 +36,7 @@
       "Yuchi Huo"
     ],
     "venue": "Transactions on Graphics 2025",
-    "teaserUrl": "https://vicranger.github.io/project-page-motion-guided-flow/teasor.jpg",
+    "teaserUrl": "/pub-teasers/25MoFlow.webp",
     "links": {
       "paper": "https://vicranger.github.io/project-page-motion-guided-flow/paper.pdf",
       "project": "https://vicranger.github.io/project-page-motion-guided-flow/",
@@ -95,7 +95,7 @@
       "Rui Wang"
     ],
     "venue": "ACM Transactions on Graphics (Proceedings of SIGGRAPH 2025)",
-    "teaserUrl": "https://dream4leo.github.io/assets/images/heterosurface.png",
+    "teaserUrl": "/pub-teasers/heterosurface.webp",
     "links": {
       "paper": "https://doi.org/10.1145/3730828",
       "project": "https://dream4leo.github.io/heterosurface",

@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import PublicationsView from '../views/PublicationsView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,8 +13,7 @@ const router = createRouter({
     {
       path: '/publications',
       name: 'publications',
-      // Lazy load the component for better performance
-      component: () => import('../views/PublicationsView.vue')
+      component: PublicationsView,
     },
   ],
 })
