@@ -1,8 +1,30 @@
 @import './base.css';
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+:root {
+  /* 1. Set the new primary color */
+  --el-color-primary: #1a478d;
+
+  /* 2. Make all components sharp by removing border-radius */
+  --el-border-radius-base: 2px;
+  /* A very subtle radius */
+  --el-border-radius-small: 2px;
+  --el-border-radius-round: 2px;
+  /* For maximum sharpness, you can set these to 0px */
+}
+
+/* Optional: Adjust primary color for dark mode for better contrast */
+html.dark {
+  --el-color-primary: #5c85c4;
+  /* A lighter blue for dark backgrounds */
+}
+
+/* --- END OF ADDED CODE --- */
+
 #app {
   /* Set Inter as the primary font */
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+  font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 
   max-width: 100%;

@@ -1,169 +1,216 @@
 <template>
   <div class="home-container">
-    <el-row :gutter="40">
-      <!-- Left Column -->
-      <el-col :xs="24" :sm="24" :md="8">
-        <div class="left-panel">
-          <el-avatar :size="150" src="/logo.svg" style="color: var(--el-color-primary)" />
+    <!-- Section 1: Introduction -->
+    <section class="intro-section">
+      <p>
+        The <strong>Advanced Rendering and Computation(ARC) Group</strong> is a research group in the State Key Lab of
+        CAD&CG at Zhejiang University that focuses on developing cutting-edge algorithms for rendering and computation.
+      </p>
+      <p>
+        We develop <em>rendering algorithms</em> that simulate light to create realistic images of virtual worlds, along
+        with <em>inverse rendering algorithms</em> that go the opposite way and reconstruct 3D worlds from images. We
+        disseminate our work through open source projects and top-tier publications.
+      </p>
+    </section>
 
-          <h1 class="team-name">ZJU Render</h1>
-          <p class="team-description">Graphics and Rendering Group</p>
-          <p class="team-affiliation">
-            State Key Lab of CAD&CG, Zhejiang University
-          </p>
+    <!-- Section 2: Topics / Research Areas -->
+    <section class="topics-section">
+      <h2 class="section-title">Topics</h2>
+      <el-row :gutter="30">
+        <el-col v-for="topic in topics" :key="topic.title" :xs="24" :sm="12" :md="8">
+          <el-card shadow="hover" class="topic-card">
+            <div class="topic-image-container">
+              <el-image
+                v-for="(img, index) in topic.images"
+                :key="index"
+                :src="img"
+                fit="cover"
+                class="topic-image"
+                lazy
+              />
+            </div>
+            <div class="topic-content">
+              <h3 class="topic-title">{{ topic.title }}</h3>
+              <p>{{ topic.description }}</p>
+            </div>
+          </el-card>
+        </el-col>
+      </el-row>
+    </section>
 
-          <!-- === ICON SECTION UPDATED === -->
-          <div class="social-links">
-            <a href="mailto:contact@zjurender.com" title="Email">
-              <font-awesome-icon :icon="faEnvelope" />
-            </a>
-            <a href="#" target="_blank" title="Google Scholar">
-              <font-awesome-icon :icon="faGraduationCap" />
-            </a>
-            <a href="#" target="_blank" title="GitHub">
-              <font-awesome-icon :icon="faGithub" />
-            </a>
-          </div>
-          <!-- === END OF UPDATE === -->
-
-          <el-divider />
-
-          <h2 class="interests-title">Research Topics</h2>
-          <div class="interests-tags">
-            <el-tag type="primary" effect="light" size="large" round>Real-time Rendering</el-tag>
-            <el-tag type="primary" effect="light" size="large" round>Neural Rendering</el-tag>
-            <el-tag type="primary" effect="light" size="large" round>Computational Photography</el-tag>
-            <el-tag type="primary" effect="light" size="large" round>Geometry Processing</el-tag>
+    <!-- Section 3: News -->
+    <section class="news-section">
+      <h2 class="section-title">News</h2>
+      <div class="news-list">
+        <div v-for="item in newsItems" :key="item.date" class="news-item">
+          <!-- <el-image :src="item.imageUrl" class="news-image" fit="cover" lazy /> -->
+          <div class="news-content">
+            <p class="news-date">{{ item.date }}</p>
+            <p class="news-description" v-html="item.description"></p>
           </div>
         </div>
-      </el-col>
+      </div>
+    </section>
 
-      <!-- Right Column -->
-      <el-col :xs="24" :sm="24" :md="16">
-        <div class="right-panel">
-          <h1 class="main-title">ZJU Render Group</h1>
-          <p>
-            The ZJU Render Group, part of the State Key Lab of CAD&CG at Zhejiang University, was founded to push the
-            boundaries of computer graphics and rendering technologies. Our academic leader is Professor Wei Chen.
-          </p>
-          <p>
-            Our group focuses on the research of <strong>REAL-TIME RENDERING</strong> and <strong>NEURAL
-              RENDERING</strong>. The research direction mainly includes: physically-based rendering, differentiable
-            rendering, 3D reconstruction, and applications in virtual and augmented reality. Our group members have
-            published numerous papers at top-tier conferences and journals, including ACM SIGGRAPH, EUROGRAPHICS, and
-            IEEE TVCG.
-          </p>
-          <p>
-            The team works extensively with leading industry partners and research institutions both at home and abroad.
-            Our collaborations span across companies like Tencent, Alibaba, and NVIDIA, as well as universities such as
-            Stanford University, ETH Zurich, and the University of California, Berkeley.
-          </p>
-          <p>
-            We have developed several open-source projects and contributed to major industry standards. Our goal is to
-            bridge the gap between academic research and practical applications, creating next-generation visual
-            experiences that are more realistic, immersive, and interactive.
-          </p>
-        </div>
-      </el-col>
-    </el-row>
   </div>
 </template>
 
 <script setup lang="ts">
-// === ICONS IMPORTED HERE ===
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faEnvelope, faGraduationCap } from '@fortawesome/free-solid-svg-icons'
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { ref } from 'vue';
+
+const topics = ref([
+  {
+    title: 'Global & Neural Rendering',
+    description: 'We develop algorithms that simulate light transport in complex scenes, including global illumination and neural rendering techniques that leverage deep learning for enhanced realism.',
+    images: ['/images/home/topic-diff-render-1.jpg', '/images/home/topic-diff-render-2.jpg']
+  },
+  {
+    title: 'High-performance Rendering',
+    description: 'We create high-performance rendering algorithms that optimize the rendering process for real-time applications, including ray tracing and rasterization techniques.',
+    images: ['/images/home/topic-realism-1.jpg', '/images/home/topic-realism-2.jpg']
+  },
+  {
+    title: 'Generative & Inverse Rendering',
+    description: 'We focus on generative models for rendering and inverse rendering techniques that reconstruct 3D scenes from images, enabling applications in computer vision and graphics.',
+    images: ['/images/home/topic-compiler.jpg']
+  }
+]);
+
+const newsItems = ref([
+  {
+    date: '28 July 2024',
+    description: 'Two new papers accepted at <strong>CVPR 2024</strong>!',
+    // imageUrl: '/images/home/news-1.jpg'
+  },
+  {
+    date: '25 November 2023',
+    description: 'Three new papers accepted at <strong>SIGGRAPH Asia 2023</strong>!',
+    // imageUrl: '/images/home/news-2.jpg'
+  }
+]);
 </script>
 
 <style scoped>
+strong {
+  font-weight: 600;
+}
+
 .home-container {
-  max-width: 1280px;
+  max-width: 1024px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
-.left-panel {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-}
-
-.team-name {
-  font-size: 2rem;
+/* --- Section Title General Style --- */
+.section-title {
+  font-size: 2.2rem;
   font-weight: 700;
-  margin: 10px 0 0 0;
-  color: var(--el-text-color-primary);
-}
-
-.team-description {
-  font-size: 1.1rem;
-  color: var(--el-text-color-secondary);
-  margin: 0;
-}
-
-.team-affiliation {
-  font-size: 1rem;
-  color: var(--el-text-color-secondary);
-}
-
-.social-links {
-  display: flex;
-  gap: 20px;
-  margin-top: 10px;
-}
-
-.social-links a {
-  /* This styling will apply to the Font Awesome icons automatically */
-  font-size: 24px;
-  color: var(--el-text-color-regular);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.social-links a:hover {
-  color: var(--el-color-primary);
-}
-
-.interests-title {
-  font-size: 1.5rem;
-  margin-top: 10px;
-  margin-bottom: 15px;
-  font-weight: 500;
-}
-
-.interests-tags {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.right-panel {
-  line-height: 1.8;
-}
-
-.right-panel .main-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 25px;
-  color: var(--el-text-color-primary);
-  border-bottom: 2px solid var(--el-color-primary);
+  margin-bottom: 30px;
   padding-bottom: 10px;
-  display: inline-block;
-}
-
-.right-panel p {
-  font-size: 1rem;
-  margin-bottom: 20px;
+  border-bottom: 2px solid var(--el-border-color-light);
   color: var(--el-text-color-primary);
 }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 992px) {
-  .left-panel {
-    margin-bottom: 40px;
+/* --- Intro Section --- */
+.intro-section {
+  margin-bottom: 60px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--el-text-color-primary);
+}
+
+.intro-section p {
+  margin-bottom: 1em;
+}
+
+/* --- Topics Section --- */
+.topics-section {
+  margin-bottom: 60px;
+}
+
+.topic-card {
+  margin-bottom: 30px;
+  border: none;
+  --el-card-padding: 0; /* Remove default card padding */
+}
+
+.topic-image-container {
+  display: flex;
+  gap: 4px; /* A small gap between images if there are two */
+}
+
+.topic-image {
+  width: 100%;
+  height: 180px;
+  display: block;
+}
+
+.topic-content {
+  padding: 20px;
+}
+
+.topic-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--el-text-color-regular);
+  margin: 0 0 15px 0;
+}
+
+.topic-content p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--el-text-color-primary);
+}
+
+/* --- News Section --- */
+.news-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.news-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  flex-shrink: 0; /* Prevent image from shrinking */
+  border: 1px solid var(--el-border-color-lighter);
+}
+
+.news-date {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--el-text-color-primary);
+  margin: 0 0 8px 0;
+}
+
+.news-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--el-text-color-regular);
+}
+
+/* Allow links inside v-html to be styled */
+.news-description :deep(a) {
+  font-weight: 600;
+  color: var(--el-color-primary);
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.news-description :deep(a:hover) {
+  opacity: 0.8;
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .news-item {
+    flex-direction: column; /* Stack image on top of text on mobile */
+    align-items: flex-start;
   }
 }
 </style>
