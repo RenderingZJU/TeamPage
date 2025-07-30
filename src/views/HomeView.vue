@@ -1,13 +1,13 @@
 <template>
   <div class="home-container">
-    <!-- <section class="group-teaser">
-      <el-image src="/topic-teasers/chanel-box.png" fit="cover" class="group-image" />
-    </section> -->
     <!-- Section 1: Introduction -->
     <section class="intro-section">
       <p>
         The <strong>Advanced Rendering and Computation (ARC) Group</strong> is a research group in the State Key Lab of
         CAD&CG at Zhejiang University that focuses on developing cutting-edge algorithms for rendering and computation.
+        The academic
+        leaders are Prof. <a href="http://www.cad.zju.edu.cn/home/huo/">Yuchi Huo</a> and Prof. <a
+          href="http://www.cad.zju.edu.cn/home/rwang/">Rui Wang</a>.
       </p>
       <p>
         We develop <em>rendering algorithms</em> that simulate light to create realistic images of virtual worlds, along
@@ -45,17 +45,17 @@ const topics = ref([
   {
     title: 'Global & Neural Rendering',
     description: 'We develop algorithms that simulate light transport in complex scenes, including global illumination and neural rendering techniques that leverage deep learning for enhanced realism.',
-    images: ['/topic-teasers/dualband.png']
+    images: ['/topic-teasers/dualband.webp']
   },
   {
     title: 'High-performance Rendering',
     description: 'We create high-performance rendering algorithms that optimize the rendering process for real-time applications, including ray tracing and rasterization techniques.',
-    images: ['/topic-teasers/streaming.jpg']
+    images: ['/topic-teasers/streaming.webp']
   },
   {
     title: 'Generative & Inverse Rendering',
     description: 'We focus on generative models for rendering and inverse rendering techniques that reconstruct 3D scenes from images, enabling applications in computer vision and graphics.',
-    images: ['/topic-teasers/icn.png']
+    images: ['/topic-teasers/icn.webp']
   }
 ]);
 
