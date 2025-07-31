@@ -3,16 +3,20 @@
     <!-- Section 1: Introduction -->
     <section class="intro-section">
       <p>
-        The <strong>Advanced Rendering and Computation (ARC) Group</strong> is a research group in the State Key Lab of
-        CAD&CG at Zhejiang University that focuses on developing cutting-edge algorithms for rendering and computation.
-        The academic
-        leaders are Prof. <a href="http://www.cad.zju.edu.cn/home/huo/">Yuchi Huo</a> and Prof. <a
+        The <strong>Advanced Rendering and Creativity (ARC) Group</strong> is a research group in the State Key Lab of
+        CAD&CG at Zhejiang University, currently led by Prof. <a href="http://www.cad.zju.edu.cn/home/huo/">Yuchi
+          Huo</a>.
+        It is originated from <strong>ZJU Rendering Group</strong> led by Prof. <a
           href="http://www.cad.zju.edu.cn/home/rwang/">Rui Wang</a>.
       </p>
       <p>
-        We develop <em>rendering algorithms</em> that simulate light to create realistic images of virtual worlds, along
-        with <em>inverse rendering algorithms</em> that go the opposite way and reconstruct 3D worlds from images. We
-        disseminate our work through open source projects and top-tier publications.
+        We develop <em>rendering algorithms</em> that simulate light to produce realistic images of virtual worlds, as
+        well
+        as <em>inverse rendering algorithms</em> that reconstruct 3D scenes from images. Our goal is to build a
+        comprehensive
+        architecture for the next-generation AI-native graphics pipeline. We disseminate our work through open-source
+        projects,
+        top-tier publications, and industrial applications.
       </p>
     </section>
 
@@ -34,17 +38,39 @@
         </el-col>
       </el-row>
     </section>
-    <!-- Sections 3: News -->
-    <section class="news-section">
-      <h2 class="section-title">News</h2>
-      <div class="news-list">
-        <div v-for="(item, index) in newsItems" :key="index" class="news-item">
-          <div>
-            <p class="news-date">{{ item.date }}</p>
-            <p class="news-description" v-html="item.description"></p>
+    <!-- Sections 3: News & Contacts -->
+    <section class="news-contacts-section">
+      <el-row :gutter="40">
+        <!-- News Column -->
+        <el-col :xs="24" :md="12">
+          <h2 class="section-title">News</h2>
+          <div class="news-list">
+            <div v-for="(item, index) in newsItems" :key="index" class="news-item">
+              <div>
+                <p class="news-date">{{ item.date }}</p>
+                <p class="news-description" v-html="item.description"></p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </el-col>
+
+        <!-- Contacts Column -->
+        <el-col :xs="24" :md="12">
+          <h2 class="section-title">Contacts</h2>
+          <div class="contacts-list">
+            <div v-for="(contact, index) in contacts" :key="index" class="contact-item">
+              <div class="contact-details">
+                <p v-if="contact.email" class="contact-email">
+                  <strong>Email:</strong> <a :href="'mailto:' + contact.email">{{ contact.email }}</a>
+                </p>
+                <p v-if="contact.office" class="contact-office">
+                  <strong>Office:</strong> {{ contact.office }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </el-col>
+      </el-row>
     </section>
 
   </div>
@@ -74,15 +100,22 @@ const topics = ref([
 const newsItems = ref([
   {
     date: '25 June 2025',
-    description: 'Two new papers accepted at <strong>ICCV 2025</strong>!'
+    description: 'Two new papers accepted at <strong>ICCV 2025</strong>.'
   },
   {
     date: '23 May 2025',
-    description: 'Three new papers accepted at <strong>SIGGRAPH 2025</strong>!'
+    description: 'Three new papers accepted at <strong>SIGGRAPH 2025</strong>.'
   },
   {
     date: '12 March 2025',
-    description: 'One paper accepted at <strong>Transactions on Graphics</strong>!'
+    description: 'One paper accepted at <strong>Transactions on Graphics</strong>.'
+  }
+]);
+
+const contacts = ref([
+  {
+    email: 'arc.rendering.group@gmail.com',
+    office: 'Meng Minwei Building, Zijingang Campus, Zhejiang University'
   }
 ]);
 </script>
@@ -171,7 +204,11 @@ strong {
   color: var(--el-text-color-primary);
 }
 
-/* --- News Section --- */
+/* --- News & Contacts Section --- */
+.news-contacts-section {
+  margin-bottom: 20px;
+}
+
 .news-item {
   display: flex;
   align-items: flex-start;
@@ -213,6 +250,48 @@ strong {
   opacity: 0.8;
 }
 
+/* --- Contacts Section --- */
+.contact-item {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--el-border-color-lighter);
+}
+
+.contact-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.contact-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--el-text-color-primary);
+  margin: 0 0 5px 0;
+}
+
+.contact-title {
+  font-size: 0.9rem;
+  color: var(--el-text-color-regular);
+  margin: 0 0 15px 0;
+  font-style: italic;
+}
+
+.contact-details p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--el-text-color-regular);
+  margin: 0 0 5px 0;
+}
+
+.contact-details a {
+  color: var(--el-color-primary);
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.contact-details a:hover {
+  opacity: 0.8;
+}
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
@@ -220,6 +299,14 @@ strong {
     flex-direction: column;
     /* Stack image on top of text on mobile */
     align-items: flex-start;
+  }
+
+  .news-contacts-section .el-col {
+    margin-bottom: 40px;
+  }
+
+  .news-contacts-section .el-col:last-child {
+    margin-bottom: 0;
   }
 }
 </style>
