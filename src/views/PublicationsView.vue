@@ -13,7 +13,8 @@
         <el-card v-for="paper in papers" :key="paper.id" class="publication-card" shadow="hover">
           <el-row :gutter="30">
             <el-col :xs="24" :sm="8" :md="6">
-              <el-image :src="paper.teaserUrl" fit="cover" class="teaser-image" lazy>
+              <el-image :src="paper.teaserUrl" fit="cover" class="teaser-image" loading="lazy"
+                :preview-src-list="[paper.teaserUrl]" hide-on-click-modal="true">
                 <template #placeholder>
                   <div class="image-slot">Loading...</div>
                 </template>
@@ -147,6 +148,7 @@ const formatAuthors = (authors: string[]): string => {
   text-decoration: none;
   transition: color 0.3s;
 }
+
 .paper-title-link:hover .paper-title {
   color: var(--el-color-primary);
 }
@@ -156,6 +158,7 @@ const formatAuthors = (authors: string[]): string => {
   color: var(--el-text-color-regular);
   line-height: 1.6;
 }
+
 .authors :deep(strong) {
   font-weight: 600;
   color: var(--el-text-color-primary);
@@ -165,6 +168,7 @@ const formatAuthors = (authors: string[]): string => {
   font-size: 1rem;
   color: var(--el-text-color-secondary);
 }
+
 .venue em {
   font-style: normal;
 }
@@ -181,7 +185,8 @@ const formatAuthors = (authors: string[]): string => {
   align-items: center;
   gap: 8px;
   padding: 6px 14px;
-  border-radius: 6px; /* Pill shape */
+  border-radius: 6px;
+  /* Pill shape */
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--el-color-primary);
@@ -200,6 +205,7 @@ const formatAuthors = (authors: string[]): string => {
   .teaser-image {
     margin-bottom: 20px;
   }
+
   .paper-title {
     font-size: 1.15rem;
   }

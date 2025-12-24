@@ -123,5 +123,27 @@
       "project": "https://mshnb.github.io/dualbandfusion/",
       "code": ""
     }
+  },
+  {
+    "id": 7,
+    "year": 2025,
+    "title": "StereoFG: Generating Stereo Frames from Centered Feature Stream",
+    "authors": [
+      "Chenyu Zuo",
+      "Yazhen Yuan",
+      "Zhizhen Wu",
+      "Zhijian Liu",
+      "Jingzhen Lan",
+      "Ming Fu",
+      "Yuchi Huo",
+      "Rui Wang"
+    ],
+    "venue": "ACM SIGGRAPH Asia 2025",
+    "teaserUrl": "/pub-teasers/25sfg.webp",
+    "links": {
+      "paper": "https://dl.acm.org/doi/10.1145/3757377.3763965",
+      "project": "https://zachary-zuo.github.io/SIGA2025-StereoFG/",
+      "code": "https://github.com/Zachary-Zuo/StereoFG"
+    }
   }
 ]
