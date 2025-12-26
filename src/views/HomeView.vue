@@ -30,7 +30,8 @@
               <el-image v-for="(img, index) in topic.images" :key="index" :src="img" fit="cover" class="topic-image"
                 lazy>
                 <template #placeholder>
-                  <BlurhashImage v-if="topicBlurhashes[img]" :blurhash="topicBlurhashes[img]" :aspectRatio="16 / 9" />
+                  <BlurhashImage v-if="topicBlurhashesMap[img]" :blurhash="topicBlurhashesMap[img]"
+                    :aspectRatio="16 / 9" />
                   <div v-else class="image-slot">Loading...</div>
                 </template>
               </el-image>
@@ -85,6 +86,7 @@
 import { ref } from 'vue';
 import BlurhashImage from '@/components/BlurhashImage.vue'
 import topicBlurhashes from '@/assets/topic-blurhashes.json'
+const topicBlurhashesMap: Record<string, string> = topicBlurhashes as Record<string, string>
 
 const topics = ref([
   {
