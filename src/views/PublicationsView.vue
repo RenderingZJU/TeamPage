@@ -16,7 +16,8 @@
               <el-image :src="paper.teaserUrl" fit="cover" class="teaser-image" loading="lazy"
                 :preview-src-list="[paper.teaserUrl]" hide-on-click-modal="true">
                 <template #placeholder>
-                  <div class="image-slot">Loading...</div>
+                  <BlurhashImage v-if="paper.blurhash" :blurhash="paper.blurhash" :aspectRatio="4 / 3" />
+                  <div v-else class="image-slot">Loading...</div>
                 </template>
               </el-image>
             </el-col>
@@ -54,6 +55,7 @@
 import { computed } from 'vue'
 import publicationsData from '@/assets/publications.json'
 import peopleData from '@/assets/people.json'
+import BlurhashImage from '@/components/BlurhashImage.vue'
 
 // --- Import FontAwesome Icons ---
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'

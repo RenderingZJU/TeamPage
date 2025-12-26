@@ -28,7 +28,12 @@
           <el-card shadow="hover" class="topic-card">
             <div class="topic-image-container">
               <el-image v-for="(img, index) in topic.images" :key="index" :src="img" fit="cover" class="topic-image"
-                lazy />
+                lazy>
+                <template #placeholder>
+                  <BlurhashImage v-if="topicBlurhashes[img]" :blurhash="topicBlurhashes[img]" :aspectRatio="16 / 9" />
+                  <div v-else class="image-slot">Loading...</div>
+                </template>
+              </el-image>
             </div>
             <div class="topic-content">
               <h3 class="topic-title">{{ topic.title }}</h3>
@@ -78,6 +83,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import BlurhashImage from '@/components/BlurhashImage.vue'
+import topicBlurhashes from '@/assets/topic-blurhashes.json'
 
 const topics = ref([
   {
