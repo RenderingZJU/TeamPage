@@ -145,5 +145,68 @@
       "project": "https://zachary-zuo.github.io/SIGA2025-StereoFG/",
       "code": "https://github.com/Zachary-Zuo/StereoFG"
     }
+  },
+  {
+    "id": 8,
+    "year": 2021,
+    "title": "Real-time Monte Carlo Denoising with Weight Sharing Kernel Prediction Network",
+    "authors": [
+      "Hangming Fan",
+      "Rui Wang",
+      "Yuchi Huo",
+      "Hujun Bao"
+    ],
+    "venue": "Computer Graphics Forum (EGSR 2021)",
+    "teaserUrl": "/pub-teasers/fan21RealtimeMC.webp",
+    "links": {
+      "paper": "https://onlinelibrary.wiley.com/doi/epdf/10.1111/cgf.14338",
+      "project": "https://hmfann.github.io/wskp/",
+      "code": "https://github.com/Rendering-at-ZJU/weight-sharing-kernel-prediction-denoising"
+    }
+  },
+  {
+    "id": 9,
+    "year": 2026,
+    "title": "PFAvatar: Pose-Fusion 3D Personalized Avatar Reconstruction from Real-World Outfit-of-the-Day Photos",
+    "authors": [
+      "Dianbing Xi",
+      "Guoyuan An",
+      "Jingsen Zhu",
+      "Zhijian Liu",
+      "Yuan Liu",
+      "Ruiyuan Zhang",
+      "Jiayuan Lu",
+      "Yuchi Huo",
+      "Rui Wang"
+    ],
+    "venue": "AAAI 2026",
+    "teaserUrl": "/pub-teasers/pfavatar_teaser.webp",
+    "links": {
+      "paper": "https://arxiv.org/pdf/2511.12935",
+      "project": "https://xdobetter.github.io/OOTD_PFAvatar/",
+      "code": "https://github.com/xdobetter/OOTD_PFAvatar"
+    }
+  },
+  {
+    "id": 10,
+    "year": 2026,
+    "title": "OmniVDiff: Omni Controllable Video Diffusion for Generation and Understanding",
+    "authors": [
+      "Dianbing Xi",
+      "Jiepeng Wang",
+      "Yuanzhi Liang",
+      "Xi Qiu",
+      "Yuchi Huo",
+      "Rui Wang",
+      "Chi Zhang",
+      "Xuelong Li"
+    ],
+    "venue": "AAAI 2026",
+    "teaserUrl": "/pub-teasers/omnivdiff_teaser.webp",
+    "links": {
+      "paper": "https://arxiv.org/pdf/2504.10825",
+      "project": "https://tele-ai.github.io/OmniVDiff/",
+      "code": "https://github.com/Tele-AI/OmniVDiff"
+    }
   }
 ]
