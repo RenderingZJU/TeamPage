@@ -208,5 +208,25 @@
       "project": "https://tele-ai.github.io/OmniVDiff/",
       "code": "https://github.com/Tele-AI/OmniVDiff"
     }
+  },
+  {
+    "id": 11,
+    "year": 2025,
+    "title": "Streaming-Aware Neural Monte Carlo Rendering Framework with Unified Denoising-Compression and Client Collaboration",
+    "authors": [
+      "Hangming Fan",
+      "Yuchi Huo",
+      "Chuankun Zheng",
+      "Chonghao Hu",
+      "Yazhen Yuan",
+      "Rui Wang"
+    ],
+    "venue": "ACM Transactions on Graphics (SIGGRAPH 2025)",
+    "teaserUrl": "/pub-teasers/fan25streaming.webp",
+    "links": {
+      "paper": "https://dl.acm.org/doi/pdf/10.1145/3730879",
+      "project": "https://hmfann.github.io/collaborative-streaming/",
+      "code": "https://github.com/Rendering-at-ZJU/Cloud-End-Collaboration-MC-Rendering"
+    }
   }
 ]

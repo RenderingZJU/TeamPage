@@ -53,6 +53,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import publicationsData from '@/assets/publications.json'
+import peopleData from '@/assets/people.json'
 
 // --- Import FontAwesome Icons ---
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -61,7 +62,14 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 // --- Type Definition and Data Processing (remains the same) ---
 type Publication = (typeof publicationsData)[number];
+type Person = (typeof peopleData)[number];
+
 const publications: Publication[] = [...publicationsData].sort((a, b) => b.year - a.year || b.id - a.id);
+
+// Build a quick lookup from author name to URL
+const peopleMap = new Map<string, string>(
+  (peopleData as Person[]).map((p) => [p.name, p.url])
+);
 
 const groupedPublications = computed(() => {
   const groups = new Map<number, Publication[]>();
@@ -75,8 +83,14 @@ const groupedPublications = computed(() => {
 });
 
 const formatAuthors = (authors: string[]): string => {
-  // Example of highlighting a specific author
-  return authors.join(', ');
+  const parts = authors.map((name) => {
+    const url = peopleMap.get(name);
+    if (url) {
+      return `<a href="${url}" target="_blank" rel="noopener">${name}</a>`;
+    }
+    return name;
+  });
+  return parts.join(', ');
 };
 </script>
 
