@@ -263,5 +263,26 @@
       "project": "https://valentina-tinder.github.io/anitex"
     },
     "blurhash": "LcP%Fk?w%1-o-;W;fioJ%gaJR-WE"
+  },
+  {
+    "id": 13,
+    "year": 2025,
+    "title": "Fuse3D: Generating 3D Assets Controlled by Multi-Image Fusion",
+    "authors": [
+      "Xuancheng Jin",
+      "Rengan Xie",
+      "Wenting Zheng",
+      "Rui Wang",
+      "Hujun Bao",
+      "Yuchi Huo"
+    ],
+    "venue": "ACM SIGGRAPH Asia 2025",
+    "teaserUrl": "/pub-teasers/Siga25-fuse3d.webp",
+    "links": {
+      "paper": "https://dl.acm.org/doi/10.1145/3757377.3763943",
+      "project": "https://jinnmnm.github.io/Fuse3d.github.io/",
+      "code": "https://github.com/JINNMnm/Fuse3D"
+    },
+    "blurhash": "L8P%IpG9-6?vt-xbDjVE~q%g%hxY"
   }
 ]
