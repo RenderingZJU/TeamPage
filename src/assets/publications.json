@@ -239,5 +239,29 @@
       "code": "https://github.com/Rendering-at-ZJU/Cloud-End-Collaboration-MC-Rendering"
     },
     "blurhash": "L7AmF.?8cYV@_Msj-oOp4W9bIV=v"
+  },
+  {
+    "id": 12,
+    "year": 2025,
+    "title": "AniTex: Light-Geometry Consistent PBR Material Generation for Animatable Objects",
+    "authors": [
+      "Jieting Xu",
+      "Ziyi Xu",
+      "Guoyuan An",
+      "Yiwei Hu,",
+      "Rengan Xie,",
+      "Zhijian Liu",
+      "Dianbing Xi",
+      "Wenjun Song",
+      "Rui Wang",
+      "Yuchi Huo"
+    ],
+    "venue": "ACM SIGGRAPH Asia 2025",
+    "teaserUrl": "/pub-teasers/25anitex.webp",
+    "links": {
+      "paper": "https://dl.acm.org/doi/10.1145/3757377.3763936",
+      "project": "https://valentina-tinder.github.io/anitex"
+    },
+    "blurhash": "LcP%Fk?w%1-o-;W;fioJ%gaJR-WE"
   }
 ]
