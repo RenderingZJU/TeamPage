@@ -16,9 +16,9 @@
     "venue": "ACM SIGGRAPH Asia 2023",
     "teaserUrl": "/pub-teasers/23arfp.webp",
     "links": {
-      "paper": "https://vicranger.github.io/project-page-learnable-motion-vector/wu23adaptive.pdf",
-      "project": "https://vicranger.github.io/project-page-learnable-motion-vector/",
-      "code": "https://github.com/VicRanger/learnable-motion-vector"
+      "paper": "https://dl.acm.org/doi/abs/10.1145/3610548.3618211",
+      "project": "https://wzz.ink/projects/learnable-motion-vector/",
+      "code": "https://github.com/jsnzwu/learnable-motion-vector"
     },
     "blurhash": "LHF~Q_,nROyEysR~RjxtJ7NGbwaK"
   },
@@ -39,9 +39,9 @@
     "venue": "Transactions on Graphics 2025",
     "teaserUrl": "/pub-teasers/25MoFlow.webp",
     "links": {
-      "paper": "https://vicranger.github.io/project-page-motion-guided-flow/paper.pdf",
-      "project": "https://vicranger.github.io/project-page-motion-guided-flow/",
-      "code": "https://github.com/VicRanger/motion-guided-flow"
+      "paper": "https://dl.acm.org/doi/10.1145/3730400",
+      "project": "https://wzz.ink/projects/motion-guided-flow/",
+      "code": "https://github.com/jsnzwu/motion-guided-flow"
     },
     "blurhash": "LYD,Av?w?b-ptR-:%MtRRPadoet8"
   },
@@ -284,5 +284,26 @@
       "code": "https://github.com/JINNMnm/Fuse3D"
     },
     "blurhash": "L8P%IpG9-6?vt-xbDjVE~q%g%hxY"
+  },
+  {
+    "id": 14,
+    "year": 2025,
+    "title": "Consecutive Frame Extrapolation with Predictive Sparse Shading",
+    "authors": [
+      "Zhizhen Wu",
+      "Zhe Cao",
+      "Yazhen Yuan",
+      "Zhilong Yuan",
+      "Rui Wang",
+      "Yuchi Huo"
+    ],
+    "venue": "ACM Transactions on Graphics (SIGGRAPH Asia 2025)",
+    "teaserUrl": "/pub-teasers/ConsecutiveWu25.webp",
+    "links": {
+      "paper": "https://dl.acm.org/doi/10.1145/3763363",
+      "project": "https://wzz.ink/projects/predictive-sparse-shading/",
+      "code": "https://github.com/jsnzwu/predictive-sparse-shading"
+    },
+    "blurhash": "LHF~Q_,nROyEysR~RjxtJ7NGbwaK"
   }
 ]
