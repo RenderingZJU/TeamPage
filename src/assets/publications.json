@@ -305,5 +305,31 @@
       "code": "https://github.com/jsnzwu/predictive-sparse-shading"
     },
     "blurhash": "LHF~Q_,nROyEysR~RjxtJ7NGbwaK"
+  },
+  {
+    "id": 16,
+    "year": 2025,
+    "title": "NeLiF: Neural Lighting Function Generation for Indoor Rendering",
+    "authors": [
+      "Hongtao Sheng",
+      "Yuchi Huo",
+      "Chuankun Zheng",
+      "Guangzhi Han",
+      "Yifan Peng",
+      "Shi Li",
+      "Bin Zang",
+      "Hao Zhu",
+      "Rui Tang",
+      "Yiming Wu",
+      "Rui Wang",
+      "Hujun Bao"
+    ],
+    "venue": "ACM SIGGRAPH Asia 2025",
+    "teaserUrl": "/pub-teasers/25nelif.webp",
+    "links": {
+      "paper": "https://dl.acm.org/doi/10.1145/3757377.3763958",
+      "project": "https://gensokyolover.github.io/NeLiF-Neural-Lighting-Function-Generation-for-Indoor-Rendering/"
+    },
+    "blurhash": "L8EyJLIo~Vg4?G9GRi%MI[rqI;jE"
   }
 ]
